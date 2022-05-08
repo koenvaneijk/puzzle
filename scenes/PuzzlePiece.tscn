@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/particles/star_04.png" type="Texture" id=1]
+[ext_resource path="res://scenes/PuzzlePiece.gd" type="Script" id=2]
+
+[node name="PuzzlePiece" type="TextureButton"]
+stretch_mode = 2
+script = ExtResource( 2 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 16
+lifetime = 1.12
+one_shot = true
+explosiveness = 0.22
+randomness = 0.3
+lifetime_randomness = 0.52
+local_coords = false
+texture = ExtResource( 1 )
+emission_shape = 1
+emission_sphere_radius = 1.55
+spread = 180.0
+gravity = Vector2( 0, 98.334 )
+initial_velocity = 256.88
+initial_velocity_random = 0.36
+angular_velocity = -277.01
+angular_velocity_random = 0.5
+orbit_velocity = -0.12
+orbit_velocity_random = 0.37
+linear_accel = 3.21
+damping = 1.08
+scale_amount = 0.05
+scale_amount_random = 0.3
+hue_variation = -0.58
+hue_variation_random = 1.0
+anim_speed = 10.57
+anim_speed_random = 0.28
+anim_offset = 0.56
+anim_offset_random = 0.62
+
+[connection signal="button_down" from="." to="." method="_on_PuzzlePiece_button_down"]
+[connection signal="gui_input" from="." to="." method="_on_PuzzlePiece_gui_input"]
